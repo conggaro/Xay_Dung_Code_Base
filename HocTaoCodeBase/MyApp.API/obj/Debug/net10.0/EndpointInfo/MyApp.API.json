@@ -1,0 +1,180 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "MyApp.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/SanPham": {
+      "get": {
+        "tags": [
+          "SanPham"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SanPham"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSanPhamRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSanPhamRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSanPhamRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/{id}": {
+      "get": {
+        "tags": [
+          "SanPham"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SanPham"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/{id}/gia": {
+      "put": {
+        "tags": [
+          "SanPham"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateSanPhamRequest": {
+        "type": "object",
+        "properties": {
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "gia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ngayMua": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "dangBan": {
+            "type": "boolean"
+          },
+          "loai": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ngayHetHan": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "SanPham"
+    }
+  ]
+}
