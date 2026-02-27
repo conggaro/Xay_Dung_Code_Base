@@ -1,0 +1,28 @@
+# Build
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Publish
+Publish/
+PubTmp/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ASP.NET Core
+appsettings.Development.json
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
